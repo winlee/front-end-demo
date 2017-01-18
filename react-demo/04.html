@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03 Custom Component by Property</title>
+    <script src="lib/react.js"></script>
+    <script src="lib/react-dom.js"></script>
+    <script src="lib/babel.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+     /*MyTitle 首字母需大写，react强制*/
+     /*通过this.props 传递属性或传参*/
+     /*通过状态变动，引发组件的重新渲染。 :
+     constructor是组件的构造函数，会在创建实例时自动调用。
+     ...args表示组件参数，super(...args)是 ES6 规定的写法。
+     this.state对象用来存放内部状态，这里是定义初始状态。*/
+    class MyTitle extends React.Component{
+           constructor(...args){
+               super(...args);
+               this.state = {
+                   name:'访问者'
+               };
+           }
+
+           handleChange(e){
+               let name = e.target.value;
+               this.setState({
+                   name:name
+               });
+           }
+
+           render(){
+           return <div>
+                    <input type="text" onChange={this.handleChange.bind(this)}/>
+                    <p>你好，{this.state.name}</p>
+                    </div>;
+           }
+       }
+
+       ReactDOM.render(
+           <MyTitle/>,
+           document.getElementById('example')
+       );
+    </script>
+</body>
+</html>

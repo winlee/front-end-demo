@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03 Custom Component by Property</title>
+    <script src="lib/react.js"></script>
+    <script src="lib/react-dom.js"></script>
+    <script src="lib/babel.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+     /*MyTitle 首字母需大写，react强制*/
+     /*通过this.props 传递属性或传参*/
+    class MyTitle extends React.Component{
+           render(){
+           return <h1 style={{color:this.props.color}}>Hello React Title</h1>
+           }
+       }
+
+       ReactDOM.render(
+           <MyTitle color="red"/>,
+           document.getElementById('example')
+       );
+    </script>
+</body>
+</html>
