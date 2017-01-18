@@ -1,0 +1,29 @@
+{
+  "name": "node-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app1.js",
+  "scripts": {
+    "server": "json-server db.json",
+    "build": "webpack app.js bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint **/*.js",
+    "lint-html": "eslint **/*.js -f html -o ./reports/lint-results.html",
+    "lint-fix": "eslint --fix **/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.16.0",
+    "express": "4.14.0",
+    "jquery": "3.1.1",
+    "json-server": "0.9.4",
+    "webpack": "1.14.0"
+  },
+  "devDependencies": {
+    "eslint": "3.13.1",
+    "eslint-config-airbnb-base": "11.0.1",
+    "eslint-plugin-import": "2.2.0"
+  }
+}
